@@ -1,0 +1,7 @@
+includes:
+  - configs/tsc/base.yml
+
+
+model:
+  name: gplight
+  t_min: 10

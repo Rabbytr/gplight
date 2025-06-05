@@ -7,6 +7,10 @@ from collections import defaultdict
 class GPLight(MaxPressureAgent):
     ARITY = 16
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.rule = None
+
     def get_action(self, ob, phase, test=True):
         # get lane pressure
         lvc = self.world.get_info("lane_count")

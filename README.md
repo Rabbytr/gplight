@@ -17,6 +17,8 @@
 This is a example code for paper `GPLight` "[Learning Traffic Signal Control via Genetic Programming](https://arxiv.org/abs/2403.17328)"
 and paper `GPLight+` "[GPLight+: A Genetic Programming Method for Learning Symmetric Traffic Signal Control Policy]()"
 
+![The framework of GPLight+](images/gplight_plus_framework.png)
+
 > Evolving explainable policies using genetic programming, rather than learning non-transparent neural policies via deep reinforcement learning.
 
 The testing platform for the algorithm is [CityFlow](https://cityflow-project.github.io/) and
@@ -74,7 +76,7 @@ Once the code runs correctly, please set appropriate parameters or those recomme
 
 ## Citation :pray:
 If you encounter any difficulty using our code, please do not hesitate to submit an issue or directly contact us! If you find our work helpful (or if you are so kind as to offer us some encouragement), please consider giving us a star, and citing our paper.
-```shell
+```text
 @misc{liao2024learningtsc,
       title={Learning Traffic Signal Control via Genetic Programming}, 
       author={Xiao-Cheng Liao and Yi Mei and Mengjie Zhang},
@@ -83,5 +85,13 @@ If you encounter any difficulty using our code, please do not hesitate to submit
       archivePrefix={arXiv},
       primaryClass={cs.AI},
       url={https://arxiv.org/abs/2403.17328}, 
+}
+
+@article{liao2025gplightplus,
+	title={GPLight+: A Genetic Programming Method for Learning Symmetric Traffic Signal Control Policy},
+	author={Liao, Xiao-Cheng and Mei, Yi and Mengjie Zhang},
+	journal={IEEE Transactions on Evolutionary Computation},
+	year={2025},
+	publisher={IEEE}
 }
 ```

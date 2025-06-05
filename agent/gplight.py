@@ -5,40 +5,35 @@ from collections import defaultdict
 
 @Registry.register_model('gplight')
 class GPLight(MaxPressureAgent):
-    ARITY = 8
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.rule = None
+    ARITY = 16
 
     def get_action(self, ob, phase, test=True):
-
-        lvw = self.world.get_info("lane_waiting_count")
+        # get lane pressure
         lvc = self.world.get_info("lane_count")
+        lvw = self.world.get_info("lane_waiting_count")
         if self.inter_obj.current_phase_time < self.t_min:
             return self.inter_obj.current_phase
 
-        max_urgency = None
+        max_pressure = None
         action = -1
         for phase_id in range(len(self.inter_obj.phases)):
-            lane_links = [(start, end)
-                          for start, end in self.inter_obj.phase_available_lanelinks[phase_id]
-                          if not start.endswith('2')]
-            # TODO: start.endswith('2') is only applicable to three-lane scenarios
+            lanelinks = [(start, end)
+                 for start, end in self.inter_obj.phase_available_lanelinks[phase_id]
+                 if not start.endswith('2')]
 
-            list_dict = defaultdict(list)
-            for key, value in lane_links:
-                list_dict[key].append(value)
-            TMs = [[key] + sorted(values) for key, values in list_dict.items()]
+            fr_set, tolist = [], []
+            for fr, to in lanelinks:
+                fr_set.append(fr);
+                tolist.append(to)
+            t = [lvw[fr_set[0]], lvw[fr_set[-1]]]
+            t.extend([lvw[i] for i in tolist])
 
-            urgency = 0.0
-            for tm in TMs:
-                t = [lvw[lane] for lane in tm]
-                t.extend([lvc[lane] for lane in tm])
-                urgency += self.rule(*t)
+            t.extend([lvc[fr_set[0]], lvc[fr_set[-1]]])
+            t.extend([lvc[i] for i in tolist])
 
-            if max_urgency is None or urgency > max_urgency:
+            pressure = self.rule(*t)
+            if max_pressure is None or pressure > max_pressure:
                 action = phase_id
-                max_urgency = urgency
+                max_pressure = pressure
 
         return action

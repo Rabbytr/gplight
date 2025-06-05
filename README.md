@@ -1,11 +1,26 @@
-# GPLight
-> Genetic Programming as An Alternative to Reinforcement Learning for Traffic Signal Control
+# Genetic Programming as An Explainable Alternative to Reinforcement Learning for Traffic Signal Control
+
+![Document](https://img.shields.io/badge/docs-in_progress-violet)
+![Implementation](https://img.shields.io/badge/implementation-python-blue)
+[![DOI](https://img.shields.io/badge/GPLight-10.48550/arXiv.2403.17328-red)](https://arxiv.org/abs/2403.17328)
+[![Py_version](https://img.shields.io/badge/python-3.11-green)](https://www.python.org/)
+![License](https://img.shields.io/badge/License-None-lightgrey)
+
+[![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://www.python.org/)
+[![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)](https://numpy.org/)
+[![CityFlow](https://img.shields.io/badge/CityFlow-05bca9?style=for-the-badge)](https://cityflow-project.github.io/)
+![TSC](https://img.shields.io/badge/TSC-EA4C89?style=for-the-badge)
+![Explainable](https://img.shields.io/badge/Explainable-7400b8?style=for-the-badge)
+![Interpretable](https://img.shields.io/badge/Interpretable-028090?style=for-the-badge)
+
 ---
-This is a example code for paper "[Learning Traffic Signal Control via Genetic Programming
-](https://arxiv.org/abs/2403.17328)".
+This is a example code for paper `GPLight` "[Learning Traffic Signal Control via Genetic Programming](https://arxiv.org/abs/2403.17328)"
+and paper `GPLight+` "[GPLight+: A Genetic Programming Method for Learning Symmetric Traffic Signal Control Policy]()"
+
+> Evolving explainable policies using genetic programming, rather than learning non-transparent neural policies via deep reinforcement learning.
 
 The testing platform for the algorithm is [CityFlow](https://cityflow-project.github.io/) and
-GPLight is adapted as an intelligent agent in [LibSignal](https://github.com/DaRL-LibSignal/LibSignal).
+`GPLight(+)` is adapted as an intelligent agent in [LibSignal](https://github.com/DaRL-LibSignal/LibSignal).
 
 ## Usage
 This project does not have complex third-party dependencies!
@@ -40,22 +55,27 @@ cd CityFlow
 pip install -e .
 ```
 
-> The version of [pybind11](https://github.com/pybind/pybind11) in source code of CityFlow is unfortunately fixed. If you encounter installation errors, you may consider upgrading the pybind11 version included in CityFlow.
+> The [pybind11](https://github.com/pybind/pybind11) in source code of CityFlow is unfortunately a static version. If you encounter installation errors, you may consider upgrading the pybind11 version included in CityFlow.
 
-### Run GPLight
+### Run GPLight(+)
 
-After installing the dependencies mentioned above, you can directly run GPLight.
+After installing the dependencies mentioned above, you can directly run `GPLight`.
 
 ```shell
-python run_gplight.py
+python run_gplight.py --gplight
 ```
+You can also run `GPLight+` using the same file
+```shell
+python run_gplight.py --gplight_plus
+```
+
 To quickly get feedback on running and keep you from getting bored :joy:, the parameters set in `run_gplight.py` are relatively small. 
 Once the code runs correctly, please set appropriate parameters or those recommended in the paper.
 
 ## Citation :pray:
 If you encounter any difficulty using our code, please do not hesitate to submit an issue or directly contact us! If you find our work helpful (or if you are so kind as to offer us some encouragement), please consider giving us a star, and citing our paper.
 ```shell
-@misc{liao2024learningtrafficsignalcontrol,
+@misc{liao2024learningtsc,
       title={Learning Traffic Signal Control via Genetic Programming}, 
       author={Xiao-Cheng Liao and Yi Mei and Mengjie Zhang},
       year={2024},

@@ -47,7 +47,7 @@ parser = argparse.ArgumentParser(description='Run Experiment')
 parser.add_argument('--thread_num', type=int, default=1, help='number of threads')  # used in cityflow
 parser.add_argument('-t', '--task', type=str, default="tsc", help="task type to run")
 parser.add_argument('--seed', type=int, default=1, help="seed algorithem")
-parser.add_argument('--agent', type=str, default='gplight', help="seed algorithem")
+parser.add_argument('--agent', type=str, default='gplight_plus', help="seed algorithem")
 parser.add_argument('-n', '--network', type=str, default='cityflow4x4', help="network name")
 
 args = parser.parse_args()

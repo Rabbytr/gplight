@@ -17,6 +17,7 @@ except ModuleNotFoundError as ex:
     print(ex, end=' => ')
     print('DRL-based methods require the installation of `torch` and related modules')
 
+from .gplight_plus import GPLightPlus
 from .gplight import GPLight
 
 # from .ppo_pfrl import IPPO_pfrl

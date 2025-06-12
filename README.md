@@ -3,6 +3,7 @@
 ![Document](https://img.shields.io/badge/docs-in_progress-violet)
 ![Implementation](https://img.shields.io/badge/implementation-python-blue)
 [![DOI](https://img.shields.io/badge/GPLight-10.48550/arXiv.2403.17328-red)](https://arxiv.org/abs/2403.17328)
+[![DOI](https://img.shields.io/badge/GPLight+-10.1109/TEVC.2025.3578575-royalblue)](https://ieeexplore.ieee.org/document/11030860)
 [![Py_version](https://img.shields.io/badge/python-3.11-green)](https://www.python.org/)
 ![License](https://img.shields.io/badge/License-None-lightgrey)
 
@@ -15,7 +16,7 @@
 
 ---
 This is a example code for paper `GPLight` "[Learning Traffic Signal Control via Genetic Programming](https://arxiv.org/abs/2403.17328)"
-and paper `GPLight+` "[GPLight+: A Genetic Programming Method for Learning Symmetric Traffic Signal Control Policy]()"
+and paper `GPLight+` "[GPLight+: A Genetic Programming Method for Learning Symmetric Traffic Signal Control Policy](https://ieeexplore.ieee.org/document/11030860)"
 
 ![The framework of GPLight+](images/gplight_plus_framework.png)
 
@@ -92,6 +93,7 @@ If you encounter any difficulty using our code, please do not hesitate to submit
 	author={Liao, Xiao-Cheng and Mei, Yi and Mengjie Zhang},
 	journal={IEEE Transactions on Evolutionary Computation},
 	year={2025},
-	publisher={IEEE}
+	publisher={IEEE},
+	url = {https://doi.org/10.1109/TEVC.2025.3578575}
 }
 ```
